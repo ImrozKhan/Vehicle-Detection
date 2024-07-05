@@ -17,6 +17,11 @@ from copy import deepcopy
 from pathlib import Path
 
 import numpy as np
+np.int = int
+np.float = float
+np.bool = bool
+np.object = object
+np.complex = complex
 import torch
 import torch.distributed as dist
 import torch.nn as nn
