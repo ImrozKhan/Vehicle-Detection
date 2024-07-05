@@ -83,6 +83,7 @@ def train(hyp,  # path/to/hyp.yaml or hyp dictionary
     # Loggers
     print(RANK)
     if RANK in [-1, 0]:
+        print('xx')
         loggers = Loggers(save_dir, weights, opt, hyp, LOGGER)  # loggers instance
         print(loggers)
         if loggers.wandb:
