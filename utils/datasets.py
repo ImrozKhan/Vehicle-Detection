@@ -18,6 +18,11 @@ from threading import Thread
 
 import cv2
 import numpy as np
+np.int = int
+np.float = float
+np.bool = bool
+np.object = object
+np.complex = complex
 import torch
 import torch.nn.functional as F
 import yaml
