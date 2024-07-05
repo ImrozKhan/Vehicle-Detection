@@ -18,11 +18,6 @@ from threading import Thread
 
 import cv2
 import numpy as np
-np.int = int
-np.float = float
-np.bool = bool
-np.object = object
-np.complex = complex
 import torch
 import torch.nn.functional as F
 import yaml
@@ -34,6 +29,12 @@ from utils.augmentations import Albumentations, augment_hsv, copy_paste, letterb
 from utils.general import check_requirements, check_file, check_dataset, xywh2xyxy, xywhn2xyxy, xyxy2xywhn, \
     xyn2xy, segments2boxes, clean_str
 from utils.torch_utils import torch_distributed_zero_first
+
+np.int = int
+np.float = float
+np.bool = bool
+np.object = object
+np.complex = complex
 
 # Parameters
 HELP_URL = 'https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data'
