@@ -215,8 +215,6 @@ class ComputeLoss:
 
             # Append
             a = t[:, 6].long()  # anchor indices
-            print(gain)
-            print(indices)
             indices.append((b, a, gj.clamp_(0, gain[3].long() - 1), gi.clamp_(0, gain[2].long() - 1)))  # image, anchor, grid indices
             tbox.append(torch.cat((gxy - gij, gwh), 1))  # box
             anch.append(anchors[a])  # anchors
