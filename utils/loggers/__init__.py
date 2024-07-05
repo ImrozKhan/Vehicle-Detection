@@ -42,12 +42,14 @@ class Loggers():
         self.csv = True  # always log to csv
 
         # Message
+        print(0)
         if not wandb:
             prefix = colorstr('Weights & Biases: ')
             s = f"{prefix}run 'pip install wandb' to automatically track and visualize YOLOv5 🚀 runs (RECOMMENDED)"
             print(emojis(s))
 
         # TensorBoard
+        print(1)
         s = self.save_dir
         if 'tb' in self.include and not self.opt.evolve:
             prefix = colorstr('TensorBoard: ')
@@ -55,6 +57,7 @@ class Loggers():
             self.tb = SummaryWriter(str(s))
 
         # W&B
+        print(2)
         if wandb and 'wandb' in self.include:
             wandb_artifact_resume = isinstance(self.opt.resume, str) and self.opt.resume.startswith('wandb-artifact://')
             run_id = torch.load(self.weights).get('wandb_id') if self.opt.resume and not wandb_artifact_resume else None
