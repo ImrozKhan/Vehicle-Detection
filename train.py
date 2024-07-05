@@ -48,11 +48,6 @@ from utils.loggers import Loggers
 from utils.callbacks import Callbacks
 
 # Add compatibility for deprecated aliases
-np.int = int
-np.float = float
-np.bool = bool
-np.object = object
-np.complex = complex
 
 LOGGER = logging.getLogger(__name__)
 LOCAL_RANK = int(os.getenv('LOCAL_RANK', -1))  # https://pytorch.org/docs/stable/elastic/run.html
