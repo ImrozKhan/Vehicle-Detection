@@ -83,7 +83,7 @@ def run(weights='yolov5s.pt',  # model.pt path(s)
     elif onnx:
         check_requirements(('onnx', 'onnxruntime'))
         import onnxruntime
-        session = onnxruntime.InferenceSession(w, None)
+        session = onnxruntime.InferenceSession(w, providers=['CUDAExecutionProvider'])
     else:  # TensorFlow models
         check_requirements(('tensorflow>=2.4.1',))
         import tensorflow as tf
